@@ -93,7 +93,6 @@ function subscribeUser() {
   .then(function(subscription) {
     console.log('User is subscribed.');
 
-    debugger;
     sendSubscriptionToBackEnd(subscription);
     updateSubscriptionOnServer(subscription);
 
@@ -160,7 +159,7 @@ function updateSubscriptionOnServer(subscription) {
 }
 
 function sendSubscriptionToBackEnd(subscription) {
-  return fetch('http://localhost:9012/api/save-subscription/', {
+  return fetch('https://push-notifications-demo-jez.herokuapp.com/api/save-subscription', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
